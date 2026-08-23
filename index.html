@@ -1,50 +1,1007 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Il Mio Sito</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZeusFebo — Piano completo Set→Dic 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0D0D0D;--panel:#161616;--panel2:#1E1E1E;--giallo:#F4C915;--bianco:#F2F2EF;--muto:#8C8C86;--linea:#2A2A28;--rosso:#E0552F;--blu:#7FB2FF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--bianco);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px 100px 18px}
+.spine{position:relative;padding-left:20px}
+.spine:before{content:"";position:absolute;left:0;top:6px;bottom:0;width:3px;background:linear-gradient(180deg,var(--giallo) 0%,var(--giallo) 92%,transparent 100%)}
+h1,h2,h3{font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;margin:0}
+h1{font-size:clamp(40px,13vw,74px);line-height:.9}
+h2{font-size:clamp(27px,7.5vw,44px);line-height:.95;margin-bottom:14px}
+h3{font-size:clamp(17px,4.6vw,22px);line-height:1.1;margin:26px 0 8px 0}
+p{margin:0 0 14px 0;color:#C7C7C1}
+strong{color:var(--bianco);font-weight:700}
+a{color:var(--giallo)}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--giallo);margin:0 0 8px 0;display:block}
+.mono{font-family:'JetBrains Mono',monospace}
+.muto{color:var(--muto)}
+header{padding:44px 0 26px 0}
+.sub{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muto);margin-top:16px;line-height:1.9}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:26px}
+@media(min-width:560px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpi{background:var(--panel);padding:14px 12px;border-top:2px solid var(--giallo)}
+.kpi b{display:block;font-family:'Anton',sans-serif;font-size:32px;line-height:1;color:var(--giallo)}
+.kpi span{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muto);display:block;margin-top:6px}
+nav{position:sticky;top:0;z-index:50;background:rgba(13,13,13,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);margin:0 -18px;padding:10px 18px}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muto);border:1px solid var(--linea);padding:6px 10px;white-space:nowrap}
+.chips a:hover,.chips a:focus{color:var(--ink);background:var(--giallo);border-color:var(--giallo);outline:none}
+section{padding:44px 0 8px 0;border-top:1px solid var(--linea);margin-top:34px}
+section:first-of-type{border-top:none}
+.card{background:var(--panel);padding:16px;margin-bottom:12px}
+.card.hi{border-left:3px solid var(--giallo)}
+.card.warn{border-left:3px solid var(--rosso)}
+.card.info{border-left:3px solid var(--blu)}
+.pri{display:flex;gap:10px;align-items:baseline;background:var(--panel);padding:14px;margin-bottom:8px}
+.pri .tag{font-family:'Anton',sans-serif;font-size:20px;color:var(--giallo);flex:0 0 34px}
+.pri.p3 .tag{color:#5C5C58}
+.ms{position:relative;padding:0 0 26px 26px;border-left:2px solid var(--linea);margin-left:6px}
+.ms:last-child{border-left-color:transparent}
+.ms:before{content:"";position:absolute;left:-9px;top:3px;width:16px;height:16px;background:var(--giallo)}
+.ms .date{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--giallo);text-transform:uppercase}
+.ms h3{margin-top:4px}
+.ms .dod{background:var(--panel2);padding:10px 12px;margin-top:10px;font-size:13.5px;color:#B8B8B2}
+.ms .dod b{color:var(--giallo);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;display:block;margin-bottom:4px;text-transform:uppercase}
+.wk{background:var(--panel);margin-bottom:10px;border-left:3px solid var(--linea)}
+.wk.key{border-left-color:var(--giallo)}
+.wk.now{border-left-color:var(--rosso)}
+.wk-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--linea)}
+.wk-h .n{font-family:'Anton',sans-serif;font-size:22px;line-height:1}
+.wk-h .d{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muto);letter-spacing:.06em;text-align:right}
+.wk-b{padding:12px 14px}
+.who{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--giallo);margin:10px 0 4px 0}
+.who.band{color:var(--blu)}
+.wk-b ul{margin:0;padding-left:17px}
+.wk-b li{margin-bottom:4px;font-size:14px;color:#C7C7C1}
+.qta{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;background:var(--panel2);color:var(--giallo);border:1px solid var(--linea);padding:2px 6px;margin-right:6px}
+.flag{display:inline-block;background:var(--giallo);color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 7px;margin-top:10px;text-transform:uppercase}
+.flag.red{background:var(--rosso);color:#fff}
+.rows{border-top:1px solid var(--linea)}
+.row{display:grid;grid-template-columns:1fr;gap:2px;padding:12px 0;border-bottom:1px solid var(--linea)}
+.row .k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--giallo)}
+.row .v{font-size:14px;color:#C7C7C1}
+@media(min-width:600px){.row{grid-template-columns:190px 1fr;gap:16px;align-items:baseline}}
+table{width:100%;border-collapse:collapse;margin:10px 0 16px 0;font-size:13.5px}
+th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--giallo);text-align:left;padding:8px 8px 8px 0;border-bottom:1px solid var(--giallo);vertical-align:bottom}
+td{padding:9px 8px 9px 0;border-bottom:1px solid var(--linea);color:#C7C7C1;vertical-align:top}
+td.num{font-family:'JetBrains Mono',monospace;color:var(--bianco);white-space:nowrap}
+tr.tot td{border-bottom:none;border-top:1px solid var(--giallo);color:var(--bianco);font-weight:700;padding-top:12px}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll table{min-width:520px}
+.meter{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;margin-top:10px;color:var(--muto)}
+.meter b{color:var(--giallo);font-weight:700}
+.copy{background:#0A0A0A;border:1px solid var(--linea);padding:14px;margin:10px 0 6px 0}
+.copy pre{margin:0;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.65;white-space:pre-wrap;word-wrap:break-word;color:#D8D8D2}
+.btn{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:var(--giallo);border:1px solid var(--giallo);padding:7px 12px;cursor:pointer}
+.btn:hover,.btn:focus{background:var(--giallo);color:var(--ink);outline:none}
+.tick{list-style:none;padding:0;margin:0}
+.tick li{padding-left:22px;position:relative;margin-bottom:8px;font-size:14.5px;color:#C7C7C1}
+.tick li:before{content:"▮";position:absolute;left:0;color:var(--giallo);font-size:10px;top:3px}
+.no li:before{content:"✕";color:var(--rosso);font-family:'JetBrains Mono',monospace;font-size:13px;top:0}
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--linea);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#4F4F4B;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
 </head>
 <body>
+<div class="wrap">
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">MioSito</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">PATATAAAAAA</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contatti</a></li>
-        </ul>
-      </div>
+<header>
+  <span class="eyebrow">Piano completo / 15 settimane</span>
+  <h1>ZeusFebo<br>Set → Dic<br>2026</h1>
+  <div class="sub">5 elementi · Alternative / indie rock italiano · Garbatella, Roma<br>Avvio 7 settembre · Chiusura 20 dicembre · Centro Italia · 50 €/mese</div>
+  <div class="kpis">
+    <div class="kpi"><b>5</b><span>date da chiudere</span></div>
+    <div class="kpi"><b>270</b><span>messaggi</span></div>
+    <div class="kpi"><b>42</b><span>post pubblicati</span></div>
+    <div class="kpi"><b>19</b><span>clip in banca</span></div>
+  </div>
+</header>
+
+<nav>
+  <div class="chips">
+    <a href="#stato">Stato attuale</a>
+    <a href="#tesi">Tesi</a>
+    <a href="#obiettivi">Obiettivi</a>
+    <a href="#priorita">Priorità</a>
+    <a href="#milestone">Milestone</a>
+    <a href="#calendario">15 settimane</a>
+    <a href="#ruoli">Ruoli</a>
+    <a href="#booking">Booking</a>
+    <a href="#editoriale">Piano editoriale</a>
+    <a href="#testi">Testi pronti</a>
+    <a href="#uscite">Uscite</a>
+    <a href="#bandi">Bandi</a>
+    <a href="#rider">Rider</a>
+    <a href="#epk">Fix EPK</a>
+    <a href="#budget">Budget</a>
+    <a href="#regole">Regole</a>
+    <a href="#rischi">Rischi</a>
+  </div>
+</nav>
+
+<!-- STATO -->
+<section id="stato">
+  <span class="eyebrow">Fotografia di partenza</span>
+  <h2>Tutti i numeri<br>al 23 agosto</h2>
+  <p>Ogni obiettivo del piano è calibrato su queste cifre. Vanno riverificate a dicembre per misurare cosa si è mosso.</p>
+
+  <h3>Formazione e repertorio</h3>
+  <div class="scroll"><table>
+    <tr><th>Voce</th><th>Dato</th><th>Nota</th></tr>
+    <tr><td>Componenti</td><td class="num">5</td><td>Bio pubbliche e canale YouTube dichiarano 4: da correggere</td></tr>
+    <tr><td>Attivi dal</td><td class="num">2023</td><td>Nati alla Garbatella</td></tr>
+    <tr><td>Età media</td><td class="num">~40</td><td>Esclude il circuito contest under 35</td></tr>
+    <tr><td>Durata set</td><td class="num">60 min</td><td>Adattabile a 40 e 90</td></tr>
+    <tr><td>Singoli pubblicati</td><td class="num">4</td><td>Fuori in Balcone 3:42 · Smartphone 3:02 · Giù la mano 3:01 · Cinema 3:39</td></tr>
+    <tr><td>Catalogo su streaming</td><td class="num">13 min</td><td>Contro 60 minuti di set</td></tr>
+    <tr><td>Inediti mai pubblicati</td><td class="num">decine</td><td>Circa il 78% del live non esiste su streaming</td></tr>
+  </table></div>
+
+  <h3>Pubblico e piattaforme</h3>
+  <div class="scroll"><table>
+    <tr><th>Voce</th><th>Dato</th><th>Uso</th></tr>
+    <tr><td>Pubblico a concerto</td><td class="num">20–50</td><td>L'unico numero utilizzabile nelle mail</td></tr>
+    <tr><td>Follower Spotify</td><td class="num">65</td><td>Mai citato all'esterno</td></tr>
+    <tr><td>Ascoltatori mensili</td><td class="num">8</td><td>Mai citato all'esterno</td></tr>
+    <tr><td>Brano più ascoltato</td><td class="num">5.823</td><td>Smartphone. Storico, non mensile</td></tr>
+    <tr><td>Video live disponibili</td><td class="num">4</td><td>Riprese professionali, audio multitraccia registrato e mixato</td></tr>
+  </table></div>
+
+  <h3>Storico live</h3>
+  <div class="scroll"><table>
+    <tr><th>Data</th><th>Locale</th><th>Tipo</th></tr>
+    <tr><td class="num">06.06.2024</td><td>Lian Club, Roma</td><td>Live club</td></tr>
+    <tr><td class="num">07.03.2025</td><td>CSOA La Strada, Roma</td><td>Spazio autogestito</td></tr>
+    <tr><td class="num">09.05.2025</td><td>Pulp, Roma</td><td>Locale</td></tr>
+    <tr><td class="num">15.07.2025</td><td>Casetta Rossa, Roma</td><td>Spazio culturale</td></tr>
+    <tr><td class="num">14.11.2025</td><td>Campo Magnetico, Roma</td><td>Spazio autogestito</td></tr>
+    <tr><td class="num">18.04.2026</td><td>LOA Acrobax, Roma</td><td>Spazio autogestito</td></tr>
+    <tr><td class="num">01.07.2026</td><td>Casetta Rossa, Roma</td><td>Ritorno nello stesso spazio</td></tr>
+    <tr class="tot"><td class="num">7 date</td><td>26 mesi</td><td>2,6 l'anno · 2 nel 2026 · 100% Roma</td></tr>
+  </table></div>
+
+  <div class="card warn">
+    <strong>La diagnosi sta qui</strong>
+    <p style="margin:6px 0 0 0">Non è dove si è suonato, è quanto. A meno di tre date l'anno il pubblico non si accumula tra un concerto e l'altro, il repertorio non si rompe in scena e nessun programmatore vede la band due volte di fila. Cinque date confermate in quattro mesi non è un obiettivo ambizioso in assoluto: è un raddoppio del ritmo attuale, ed è esattamente il salto che serve.</p>
+  </div>
+</section>
+
+<!-- TESI -->
+<section id="tesi">
+  <span class="eyebrow">Il ragionamento sotto al piano</span>
+  <h2>Non manca<br>il materiale.<br>Manca la vendita.</h2>
+  <div class="spine">
+    <p>Quattro video live ripresi da un operatore professionista, con audio registrato e mixato in multitraccia da un produttore interno alla band. A questo stadio è materiale raro: la maggior parte dei progetti con questi numeri ha riprese fatte col telefono in fondo alla sala.</p>
+    <p>Settembre quindi non è un mese di produzione, è un mese di <strong>distribuzione</strong>. Il kit di vendita si chiude in pochi giorni e la prima ondata di mail parte nella settimana zero.</p>
+    <p>Con Francesco disponibile a ogni concerto e la registrazione multitraccia sempre attiva, <strong>ogni data futura produce automaticamente materiale</strong>. Non esiste più un collo di bottiglia sulla produzione. Ne resta uno solo: il numero di persone contattate.</p>
+    <p>Settembre-dicembre non è il periodo in cui si suona: è quello in cui si prenota. I festival estivi 2027 e le rassegne comunali si decidono tra gennaio e marzo, e chi le programma guarda il materiale che una band ha oggi.</p>
+  </div>
+
+  <div class="card warn">
+    <strong>Cosa costa l'avvio al 7 settembre</strong>
+    <p style="margin:6px 0 0 0">I calendari autunnali dei locali si chiudono tra fine agosto e inizio ottobre. Partendo il 7 settembre buona parte delle serate di ottobre e novembre è già assegnata, e il piano perde le due settimane più preziose dell'anno per quel tipo di richiesta.</p>
+    <p style="margin:8px 0 0 0">Conseguenza concreta: <strong>l'obiettivo delle 5 date resta, ma si sposta il baricentro</strong>. Meno serate a ottobre-dicembre, più date fissate per gennaio-aprile 2027. In compenso la finestra delle rassegne estive 2027 non è intaccata, perché quella si apre a gennaio: il valore del piano si concentra lì, ed è la parte che paga di più.</p>
+  </div>
+</section>
+
+<!-- OBIETTIVI -->
+<section id="obiettivi">
+  <span class="eyebrow">Target quantitativi</span>
+  <h2>Dove si deve<br>arrivare</h2>
+  <div class="scroll"><table>
+    <tr><th>Indicatore</th><th>Oggi</th><th>Target 20 dic</th></tr>
+    <tr><td>Date confermate nel periodo</td><td class="num">0</td><td class="num">5</td></tr>
+    <tr><td>di cui suonate entro dicembre</td><td class="num">0</td><td class="num">1–2</td></tr>
+    <tr><td>di cui fissate per gen–apr 2027</td><td class="num">0</td><td class="num">3–4</td></tr>
+    <tr><td>Date fuori Roma</td><td class="num">0</td><td class="num">1</td></tr>
+    <tr><td>Contatti mappati con mail vera</td><td class="num">0</td><td class="num">100</td></tr>
+    <tr><td>Primi contatti inviati</td><td class="num">0</td><td class="num">115</td></tr>
+    <tr><td>Follow-up inviati</td><td class="num">0</td><td class="num">105</td></tr>
+    <tr><td>Secondi inviti con video nuovo</td><td class="num">0</td><td class="num">20</td></tr>
+    <tr><td>Candidature estate 2027</td><td class="num">0</td><td class="num">30</td></tr>
+    <tr><td>Trattative aperte</td><td class="num">0</td><td class="num">11–17</td></tr>
+    <tr><td>Post pubblicati</td><td class="num">—</td><td class="num">42</td></tr>
+    <tr><td>Uscite YouTube</td><td class="num">4</td><td class="num">9</td></tr>
+    <tr><td>Clip verticali in banca</td><td class="num">0</td><td class="num">19</td></tr>
+    <tr><td>Candidature a contest</td><td class="num">0</td><td class="num">1 (1MNext)</td></tr>
+  </table></div>
+  <p class="muto" style="font-size:13.5px">Tasso di risposta atteso 15–25% sui primi contatti: con quattro video live professionali allegati la parte alta della forbice è realistica. Da 115 primi contatti derivano 17–29 risposte, 11–17 trattative e 5–7 date.</p>
+</section>
+
+<!-- PRIORITÀ -->
+<section id="priorita">
+  <span class="eyebrow">Scala di priorità</span>
+  <h2>Cosa conta<br>e cosa no</h2>
+  <div class="pri"><div class="tag">P0</div><div><strong>Mail ai booker.</strong> 100 contatti mappati, 115 primi invii, 105 follow-up. È l'unica attività che produce date. Se salta tutto il resto ma resta questa, il piano regge.</div></div>
+  <div class="pri"><div class="tag">P1</div><div><strong>Sessione unica di montaggio e kit di vendita.</strong> Una volta sola, entro il 13 settembre: one-sheet, 15 clip verticali, cartella materiali. Poi non si torna sul montaggio fino a novembre.</div></div>
+  <div class="pri"><div class="tag">P2</div><div><strong>42 post dalla banca clip.</strong> Tre a settimana, programmati, zero produzione nuova.</div></div>
+  <div class="pri p3"><div class="tag">P3</div><div><strong>Fuori dal piano adesso:</strong> uscite discografiche, videoclip nuovi, merch, TikTok quotidiano, ADV, rifacimento del sito, ricerca di un'etichetta. Le uscite hanno una finestra dedicata ed è il 2027.</div></div>
+</section>
+
+<!-- MILESTONE -->
+<section id="milestone">
+  <span class="eyebrow">Le sei milestone</span>
+  <h2>Con definizione<br>di "fatto"</h2>
+
+  <div class="ms">
+    <div class="date">M0 · entro 13 settembre</div>
+    <h3>Le prime mail sono partite</h3>
+    <div class="dod"><b>Fatto quando</b>
+      · One-sheet PDF da 1 pagina, con le 7 date riassunte in una riga<br>
+      · Sessione di montaggio conclusa: 15 clip verticali dai 4 video<br>
+      · Cartella materiali pubblica: foto, rider, logo, testi, one-sheet<br>
+      · Firma mail con 5 link cliccabili<br>
+      · 15 primi contatti inviati
     </div>
-  </nav>
+  </div>
 
-  <!-- Hero -->
-  <header class="text-center py-5 bg-primary text-white">
-    <h1>Benvenuto nel Mio Sito</h1>
-    <p>Costruito con Bootstrap e GitHub Pages</p>
-  </header>
+  <div class="ms">
+    <div class="date">M1 · entro 27 settembre</div>
+    <h3>La pipeline è aperta</h3>
+    <div class="dod"><b>Fatto quando</b>
+      · 60 contatti nel foglio, con mail vera e non info@<br>
+      · 40 primi contatti inviati, 10 follow-up<br>
+      · Bio, EPK e canale YouTube corretti su 5 componenti<br>
+      · Serie "Live at" avviata: 1° video ripubblicato<br>
+      · 6 post pubblicati
+    </div>
+  </div>
 
-  <!-- Sezione contenuti -->
-  <section class="container py-5">
-    <h2>Chi Sono</h2>
-    <p>Qui puoi inserire una descrizione di te o del tuo brand.</p>
-  </section>
+  <div class="ms">
+    <div class="date">M2 · entro 18 ottobre</div>
+    <h3>Le prime risposte</h3>
+    <div class="dod"><b>Fatto quando</b>
+      · 100 contatti mappati, 70 primi invii, 50 follow-up<br>
+      · 3 trattative aperte<br>
+      · 10 contatti dedicati a Municipio VIII e Garbatella<br>
+      · Rider B da 13 canali pronto e allegabile<br>
+      · 15 post pubblicati, 2° video "Live at" uscito
+    </div>
+  </div>
 
-  <!-- Footer -->
-  <footer class="text-center py-4 bg-light">
-    &copy; 2026 MioSito. Tutti i diritti riservati.
-  </footer>
+  <div class="ms">
+    <div class="date">M3 · entro 8 novembre</div>
+    <h3>Prime date sul calendario</h3>
+    <div class="dod"><b>Fatto quando</b>
+      · 2 date confermate, anche se cadono a gennaio o febbraio<br>
+      · 5 proposte di serata doppia inviate<br>
+      · 100 primi invii, 75 follow-up<br>
+      · 24 post pubblicati, 3° video "Live at" uscito
+    </div>
+  </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="ms">
+    <div class="date">M4 · entro 29 novembre</div>
+    <h3>Il materiale si rinnova da solo</h3>
+    <div class="dod"><b>Fatto quando</b>
+      · Live di novembre ripreso e registrato: 1 video integrale + 4 clip + 20 foto<br>
+      · 3 date confermate totali, di cui 1 fuori Roma<br>
+      · 20 secondi inviti ai non rispondenti, con il video nuovo come pretesto<br>
+      · One-sheet aggiornato · 33 post pubblicati
+    </div>
+  </div>
+
+  <div class="ms">
+    <div class="date">M5 · entro 20 dicembre</div>
+    <h3>Il 2027 è impostato</h3>
+    <div class="dod"><b>Fatto quando</b>
+      · 1MNext inviato<br>
+      · 30 candidature estate 2027 spedite<br>
+      · 5 date confermate tra novembre 2026 e aprile 2027<br>
+      · Piano uscite 2027 scritto: live EP a marzo, calendario singoli<br>
+      · 42 post pubblicati, 9 uscite YouTube totali
+    </div>
+  </div>
+</section>
+
+<!-- CALENDARIO -->
+<section id="calendario">
+  <span class="eyebrow">Settimana per settimana</span>
+  <h2>Le 15<br>settimane</h2>
+  <p class="muto">Barra rossa: settimana di avvio. Barra gialla: settimane che non si saltano. I numeri accanto a ogni voce sono le quantità della settimana.</p>
+
+  <div class="wk now">
+    <div class="wk-h"><span class="n">S0</span><span class="d">7 — 13 SET<br>KIT E PRIMI INVII</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul>
+        <li><span class="qta">1</span>Scelta del video migliore fra i quattro: quello con più energia e pubblico visibile, non quello suonato meglio</li>
+        <li><span class="qta">15</span>Clip verticali da 20–40 s, prodotte tutte in una sessione unica</li>
+        <li><span class="qta">1</span>One-sheet: bio, formazione a 5, set 60 min, "7 date a Roma dal 2024", 20-50 persone, 1 link video, contatti</li>
+        <li><span class="qta">1</span>Cartella materiali + firma mail + link in bio</li>
+        <li><span class="qta">15</span>Primi contatti ai locali di Roma già noti, senza fase di ricerca</li>
+      </ul>
+      <div class="who band">Band</div>
+      <ul>
+        <li>Correzione bio del canale YouTube: dichiara 4 componenti e non nomina Bruno</li>
+        <li>Alessio: messaggio a Casetta Rossa, che ha ospitato due volte, per una segnalazione ad altri spazi</li>
+      </ul>
+      <div class="flag red">M0 — 15 invii entro il 13 settembre</div>
+    </div>
+  </div>
+
+  <div class="wk key">
+    <div class="wk-h"><span class="n">S1</span><span class="d">14 — 20 SET<br>MAPPATURA</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul>
+        <li><span class="qta">40</span>Locali mappati tra Roma, Lazio, Umbria, Toscana, Abruzzo. Fonte: Instagram dei locali, guardando chi ha suonato negli ultimi 3 mesi. Il sito è quasi sempre vecchio</li>
+        <li><span class="qta">10</span>Primi contatti · <span class="qta">3</span>Post · inizio serie "Live at"</li>
+      </ul>
+      <div class="who band">Band</div>
+      <ul><li>Richiesta secca e unica: 5 locali a testa dove si è già stati a un concerto e si conosce qualcuno</li></ul>
+    </div>
+  </div>
+
+  <div class="wk">
+    <div class="wk-h"><span class="n">S2</span><span class="d">21 — 27 SET<br>ONDATA</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul>
+        <li><span class="qta">15</span>Primi contatti · <span class="qta">10</span>Follow-up · <span class="qta">3</span>Post</li>
+        <li><span class="qta">1</span>Video "Live at" pubblicato con titolo, descrizione e miniatura rifatti</li>
+        <li>Correzione EPK e bio su 5 componenti</li>
+      </ul>
+      <div class="flag">M1 — 40 invii, 60 contatti</div>
+    </div>
+  </div>
+
+  <div class="wk">
+    <div class="wk-h"><span class="n">S3</span><span class="d">28 SET — 4 OTT<br>GARBATELLA</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul>
+        <li><span class="qta">10</span>Contatti di quartiere: circoli, centri culturali, associazioni, parrocchie con spazio, ufficio cultura Municipio VIII. Prima riga diversa: "band nata alla Garbatella nel 2023"</li>
+        <li><span class="qta">10</span>Follow-up · <span class="qta">3</span>Post</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wk">
+    <div class="wk-h"><span class="n">S4</span><span class="d">5 — 11 OTT<br>SERATE DOPPIE</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul>
+        <li><span class="qta">10</span>Messaggi a band affini per serata doppia o apertura, su date romane tra dicembre e marzo</li>
+        <li><span class="qta">10</span>Follow-up · <span class="qta">3</span>Post</li>
+      </ul>
+      <div class="who band">Band</div>
+      <ul><li>Richiesta unica: 5 band a testa, di livello vicino, che si andrebbe a vedere in concerto</li></ul>
+    </div>
+  </div>
+
+  <div class="wk key">
+    <div class="wk-h"><span class="n">S5</span><span class="d">12 — 18 OTT<br>RIDER B</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul>
+        <li><span class="qta">1</span>Rider B a 13 canali e 4 mix, un foglio solo, redatto con Alessio</li>
+        <li><span class="qta">10</span>Primi contatti · <span class="qta">10</span>Follow-up · <span class="qta">3</span>Post · <span class="qta">1</span>Video "Live at"</li>
+        <li>Risposta entro 24 ore a chiunque scriva, anche solo per rimandare a gennaio</li>
+      </ul>
+      <div class="flag">M2 — 100 contatti, 70 invii</div>
+    </div>
+  </div>
+
+  <div class="wk">
+    <div class="wk-h"><span class="n">S6</span><span class="d">19 — 25 OTT<br>SPINTA</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul><li><span class="qta">15</span>Primi contatti · <span class="qta">15</span>Follow-up · <span class="qta">3</span>Post</li>
+      <li>Chiusura della prima data. A data confermata: poster e annuncio entro 48 ore, tag al locale</li></ul>
+    </div>
+  </div>
+
+  <div class="wk">
+    <div class="wk-h"><span class="n">S7</span><span class="d">26 OTT — 1 NOV<br>PULIZIA</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul><li>Chi non risponde a 2 mail passa in "riprovare a gennaio". Nessuna terza insistenza</li>
+      <li><span class="qta">10</span>Primi contatti verso Umbria e Abruzzo, dove la concorrenza è minore · <span class="qta">10</span>Follow-up · <span class="qta">3</span>Post</li></ul>
+    </div>
+  </div>
+
+  <div class="wk key">
+    <div class="wk-h"><span class="n">S8</span><span class="d">2 — 8 NOV<br>PREP LIVE</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul>
+        <li>Coordinamento con Francesco: orari, posizione, pezzi che contano di più</li>
+        <li><span class="qta">1</span>Evento Instagram · <span class="qta">3</span>Storie di avvicinamento · <span class="qta">5</span>Primi contatti · <span class="qta">10</span>Follow-up · <span class="qta">3</span>Post</li>
+      </ul>
+      <div class="who band">Band</div>
+      <ul>
+        <li>Scaletta definita e provata nell'ordine</li>
+        <li>Alessio: accordi col fonico e registrazione multitraccia predisposta</li>
+      </ul>
+      <div class="flag">M3 — 2 date confermate</div>
+    </div>
+  </div>
+
+  <div class="wk">
+    <div class="wk-h"><span class="n">S9</span><span class="d">9 — 15 NOV<br>IL LIVE</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul><li>Raccolta di tutto entro 48 ore: riprese, multitraccia, foto</li>
+      <li><span class="qta">10</span>Primi contatti che citano la data appena fatta · <span class="qta">10</span>Follow-up · <span class="qta">3</span>Post · <span class="qta">1</span>Video "Live at"</li></ul>
+    </div>
+  </div>
+
+  <div class="wk">
+    <div class="wk-h"><span class="n">S10</span><span class="d">16 — 22 NOV<br>MONTAGGIO 2</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul><li><span class="qta">4</span>Clip nuove dal live + <span class="qta">1</span>Video integrale</li>
+      <li><span class="qta">5</span>Primi contatti · <span class="qta">10</span>Follow-up · <span class="qta">3</span>Post</li></ul>
+    </div>
+  </div>
+
+  <div class="wk key">
+    <div class="wk-h"><span class="n">S11</span><span class="d">23 — 29 NOV<br>RIUSO</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul>
+        <li><span class="qta">20</span>Secondi inviti ai locali che non avevano risposto, con il video nuovo come pretesto. È la singola azione con la resa più alta del piano</li>
+        <li><span class="qta">1</span>One-sheet ed EPK aggiornati · <span class="qta">3</span>Post</li>
+      </ul>
+      <div class="flag">M4 — 3 date, 1 fuori Roma</div>
+    </div>
+  </div>
+
+  <div class="wk">
+    <div class="wk-h"><span class="n">S12</span><span class="d">30 NOV — 6 DIC<br>ESTATE 2027</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul><li><span class="qta">30</span>Voci nel foglio "Estate 2027": rassegne comunali, feste di quartiere, sagre, festival del Centro Italia. Si risale a chi ha organizzato le edizioni 2026 e si annota assessorato o associazione</li>
+      <li><span class="qta">10</span>Follow-up · <span class="qta">3</span>Post</li></ul>
+      <div class="who band">Band</div>
+      <ul><li>Richiesta unica: 3 sagre o rassegne estive a testa, della propria zona. Non si trovano su Google</li></ul>
+    </div>
+  </div>
+
+  <div class="wk key">
+    <div class="wk-h"><span class="n">S13</span><span class="d">7 — 13 DIC<br>CANDIDATURE + 1MNEXT</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul><li><span class="qta">15</span>Candidature estate 2027, variante lunga della mail</li>
+      <li><span class="qta">1</span>Iscrizione a 1MNext appena aprono le candidature · <span class="qta">1</span>Video "Live at" · <span class="qta">3</span>Post</li></ul>
+      <div class="who band">Band</div>
+      <ul><li>Scelta del pezzo per 1MNext e dei 4-5 brani per il live EP di marzo</li></ul>
+      <div class="flag">Iscrizioni 1MNext: aprono a dicembre</div>
+    </div>
+  </div>
+
+  <div class="wk">
+    <div class="wk-h"><span class="n">S14</span><span class="d">14 — 20 DIC<br>CHIUSURA</span></div>
+    <div class="wk-b">
+      <div class="who">Booking</div>
+      <ul><li><span class="qta">15</span>Candidature estive · <span class="qta">3</span>Post</li>
+      <li>Contatto ai locali già suonati per una data di ritorno a febbraio-marzo: costa un decimo della prima volta</li>
+      <li>Bilancio: invii, tasso di risposta, date chiuse, canale che ha funzionato. Calendario gennaio-marzo</li></ul>
+      <div class="who band">Band</div>
+      <ul><li>Riunione da un'ora entro il 20: cosa ha funzionato, organizzazione per la primavera</li></ul>
+      <div class="flag">M5 — 2027 impostato</div>
+    </div>
+  </div>
+
+  <div class="wk">
+    <div class="wk-h"><span class="n">—</span><span class="d">21 DIC — 6 GEN<br>FERMO</span></div>
+    <div class="wk-b">
+      <p style="margin:0;font-size:14px">Nessuno risponde alle mail sotto le feste. Non si bruciano contatti. La ripresa è il 7 gennaio, con il calendario già scritto in S14: gennaio e febbraio sono i mesi in cui si decidono le estati, e ci si arriva con 100 contatti caldi e 30 candidature già partite.</p>
+    </div>
+  </div>
+
+  <h3>Riepilogo invii</h3>
+  <div class="scroll"><table>
+    <tr><th>Tipo</th><th>Totale</th><th>Distribuzione</th></tr>
+    <tr><td>Primi contatti a locali</td><td class="num">115</td><td>S0–S10, 5–15 a settimana</td></tr>
+    <tr><td>Follow-up</td><td class="num">105</td><td>Da S2 in poi, 10–15 a settimana</td></tr>
+    <tr><td>Secondi inviti con video nuovo</td><td class="num">20</td><td>S11, tutti in blocco</td></tr>
+    <tr><td>Candidature estate 2027</td><td class="num">30</td><td>S13 e S14</td></tr>
+    <tr class="tot"><td>Totale messaggi</td><td class="num">270</td><td>15 settimane</td></tr>
+  </table></div>
+</section>
+
+<!-- RUOLI -->
+<section id="ruoli">
+  <span class="eyebrow">Divisione dei compiti</span>
+  <h2>Ruoli</h2>
+  <div class="rows">
+    <div class="row"><div class="k">Booking e comunicazione</div><div class="v">Mappatura, invii, follow-up, trattative, candidature, one-sheet, EPK, poster, montaggio delle clip, calendario editoriale, caption e hashtag</div></div>
+    <div class="row"><div class="k">Alessio Tabolacci</div><div class="v">Audio, mix, registrazione multitraccia dei live, rider e input list, rapporti col fonico. Unico canale di comunicazione con la band</div></div>
+    <div class="row"><div class="k">Francesco</div><div class="v">Riprese video a ogni concerto. Riceve in anticipo data, orari e pezzi chiave. Contropartite possibili: credit visibili sui video, mix di un suo lavoro</div></div>
+    <div class="row"><div class="k">Band</div><div class="v">Suonare e cantare. Ripubblicare ogni post nelle storie entro un'ora. Rispondere alle richieste una tantum</div></div>
+  </div>
+  <div class="card warn" style="margin-top:14px">
+    <strong>Vincolo operativo sul referente</strong>
+    <p style="margin:6px 0 0 0">Alessio cumula quattro funzioni: batterista, produttore, referente tecnico e unico canale di comunicazione. Il perimetro resta questo. Un piano che passa tutto da una persona non cede a settembre, quando c'è entusiasmo: cede a fine novembre, quando arrivano insieme un mix da finire, una data da organizzare e quattro persone da rincorrere. Ogni compito aggiuntivo va assegnato altrove.</p>
+  </div>
+  <div class="card">
+    <strong>Fuori dal perimetro della band</strong>
+    <p style="margin:6px 0 0 0">Filmare ai concerti, montare clip, scrivere caption o gestire il profilo, trattare date con i locali anche via DM, TikTok quotidiano. Nessuna di queste voci è un compito dei musicisti.</p>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <span class="eyebrow">Dove si suona</span>
+  <h2>La mappa<br>del possibile</h2>
+
+  <h3>Quattro binari, in ordine di probabilità</h3>
+  <div class="card hi">
+    <strong>1 · Circoli e locali piccoli con programmazione inediti</strong>
+    <p style="margin:6px 0 0 0">Roma: Metro Core, Sparwasser, Traffic Live Club, L'Asino Che Vola, Fonclea. Firenze: Glue, NOF. Perugia: Marla. Pescara: Scumm, Futuro Imperfetto. Target verificati, ma la programmazione cambia: controllare l'Instagram degli ultimi tre mesi prima di scrivere. Con l'avvio a settembre, la richiesta va posta direttamente su gennaio-marzo: ottobre e novembre sono in gran parte assegnati.</p>
+    <div class="meter">SFORZO <b>▮▮▯▯▯</b> · RISULTATO <b>▮▮▮▮▯</b></div>
+  </div>
+  <div class="card hi">
+    <strong>2 · Serate doppie con band affini</strong>
+    <p style="margin:6px 0 0 0">Più efficace dell'headliner singolo: due band che portano 20-50 persone a testa danno al locale 60-90 paganti, e il sì arriva molto più facilmente. Si propone all'altra band, non al locale: la data la si trova insieme, la porta si divide. È anche il binario meno sensibile ai calendari già chiusi, perché la data la si costruisce da zero.</p>
+    <div class="meter">SFORZO <b>▮▮▯▯▯</b> · RISULTATO <b>▮▮▮▮▯</b> — la mossa giusta per questo numero di pubblico e per questo avvio tardivo.</div>
+  </div>
+  <div class="card">
+    <strong>3 · Aperture per band più grosse</strong>
+    <p style="margin:6px 0 0 0">Si scrive alla band, non al locale, entro 24 ore dall'annuncio di una data. Chi organizza un tour ha spesso lo slot di apertura scoperto e nessuna voglia di cercarlo.</p>
+    <div class="meter">SFORZO <b>▮▯▯▯▯</b> · RISULTATO <b>▮▮▮▯▯</b></div>
+  </div>
+  <div class="card">
+    <strong>4 · Rassegne, feste di quartiere, festival estate 2027</strong>
+    <p style="margin:6px 0 0 0">Si decidono tra gennaio e marzo: in questi mesi si costruisce la lista e parte la prima ondata di 30 candidature. Chi decide non è un locale ma un assessorato, una pro loco o un'associazione. Nessun limite di età, e sono le date che pagano. <strong>È l'unico binario che l'avvio ritardato non danneggia</strong>, e per questo diventa il baricentro del piano.</p>
+    <div class="meter">SFORZO <b>▮▮▮▯▯</b> · RISULTATO <b>▮▮▮▮▮</b> — il ritorno arriva a giugno, non a dicembre.</div>
+  </div>
+
+  <div class="card hi">
+    <strong>Il circuito già acquisito</strong>
+    <p style="margin:6px 0 0 0">Cinque delle sette date sono nel circuito degli spazi autogestiti romani: LOA Acrobax, CSOA La Strada, Casetta Rossa, Campo Magnetico. È un mondo in cui si entra per passaparola e non per mail, e la band ci è già dentro. Due limiti veri: paga poco o niente, e il pubblico è quello del posto più che quello della band.</p>
+    <p style="margin:8px 0 0 0">Il vantaggio però è unico: <strong>quegli spazi sono in rete tra loro in tutta Italia</strong>. Credenziali ad Acrobax e La Strada sono spendibili negli spazi analoghi di Perugia, Firenze, Pisa, Pescara, che ospitano band da fuori regione molto più facilmente di un club commerciale. È la strada più veloce per la prima data fuori Roma, e programmano con preavvisi più brevi: utile proprio adesso.</p>
+    <p style="margin:8px 0 0 0">Mossa concreta: una segnalazione da Casetta Rossa, che ha già ospitato due volte, vale più di venti mail fredde.</p>
+  </div>
+
+  <div class="card hi">
+    <strong>Il vantaggio Garbatella</strong>
+    <p style="margin:6px 0 0 0">Un'identità di quartiere è un asset che quasi nessuno sfrutta. Il Municipio VIII organizza rassegne, feste ed eventi estivi, e i circoli della zona cercano spesso realtà locali. Una band della Garbatella che suona alla Garbatella non è un concerto: è un pezzo del programma di quartiere. 10 contatti dedicati nella settimana 3.</p>
+  </div>
+
+  <h3>Ordini di grandezza sul cachet</h3>
+  <div class="scroll"><table>
+    <tr><th>Tipologia</th><th>Aspettativa</th><th>Nota</th></tr>
+    <tr><td>Locale piccolo</td><td>30–50% porta o bar</td><td>Con 20-50 persone è una cifra reale, non simbolica</td></tr>
+    <tr><td>Spazio autogestito</td><td>Offerta libera</td><td>Si accetta per la rete e per il materiale, non per la cassa</td></tr>
+    <tr><td>Serata doppia</td><td>Porta divisa a metà</td><td>Conviene a entrambe le band se portano lo stesso pubblico</td></tr>
+    <tr><td>Apertura</td><td>Poco o niente</td><td>Si accetta per il palco e per il pubblico</td></tr>
+    <tr><td>Rassegna comunale</td><td>Cachet vero</td><td>La fascia più alta raggiungibile ora. Verificare se coprono service e SIAE</td></tr>
+    <tr><td>Fuori Roma</td><td>Minimo: benzina</td><td>In cinque, un viaggio a vuoto demoralizza più di un no</td></tr>
+  </table></div>
+
+  <div class="card warn">
+    <strong>Regola sui numeri</strong>
+    <p style="margin:6px 0 0 0">65 follower e 8 ascoltatori mensili non entrano mai in una mail. L'unico numero utilizzabile è <strong>il pubblico: 20-50 persone</strong>, forte nei locali da 80-150 posti — quaranta paganti sono una buona serata. In un club da 400 lo stesso numero affonda la proposta: altra ragione per restare sul tier giusto.</p>
+  </div>
+</section>
+
+<!-- EDITORIALE -->
+<section id="editoriale">
+  <span class="eyebrow">Contenuti</span>
+  <h2>Piano<br>editoriale</h2>
+  <p>42 post in 14 settimane di pubblicazione, tutti pescati da materiale già esistente. Da settembre a dicembre non si produce niente di nuovo tranne le 4 clip ricavate dal live di novembre.</p>
+
+  <h3>Volumi complessivi</h3>
+  <div class="scroll"><table>
+    <tr><th>Output</th><th>Quantità</th><th>Origine</th></tr>
+    <tr><td>Post pubblicati</td><td class="num">42</td><td>3 a settimana per 14 settimane, da S1</td></tr>
+    <tr><td>Clip live verticali</td><td class="num">14</td><td>Format A, 1 a settimana</td></tr>
+    <tr><td>Card "Un verso"</td><td class="num">14</td><td>Format B, 1 a settimana</td></tr>
+    <tr><td>Post valvola</td><td class="num">14</td><td>Annunci, ringraziamenti, ripost</td></tr>
+    <tr><td>Storie dal profilo band</td><td class="num">56</td><td>4 a settimana</td></tr>
+    <tr><td>Ricondivisioni dai 5 profili</td><td class="num">210</td><td>42 post × 5 componenti</td></tr>
+    <tr><td>Uscite YouTube</td><td class="num">5</td><td>4 "Live at" + 1 integrale dal live di novembre</td></tr>
+    <tr><td>Poster per date</td><td class="num">5</td><td>1 per data confermata</td></tr>
+    <tr><td>Caption scritte</td><td class="num">42</td><td>Una per post</td></tr>
+  </table></div>
+
+  <h3>La banca clip</h3>
+  <div class="scroll"><table>
+    <tr><th>Fonte</th><th>Clip</th><th>Quando</th></tr>
+    <tr><td>4 video live esistenti</td><td class="num">15</td><td>Sessione unica, S0</td></tr>
+    <tr><td>Live di novembre</td><td class="num">4</td><td>S10</td></tr>
+    <tr class="tot"><td>Disponibili</td><td class="num">19</td><td>Consumo previsto: 14 · margine 5</td></tr>
+  </table></div>
+
+  <h3>Calendario mensile</h3>
+  <div class="scroll"><table>
+    <tr><th>Mese</th><th>Post</th><th>Contenuti principali</th></tr>
+    <tr><td>Settembre (dal 14)</td><td class="num">7</td><td>Avvio serie "Live at" con 1° e 2° video · 3 clip live, 2 "Un verso", 2 valvola</td></tr>
+    <tr><td>Ottobre</td><td class="num">13</td><td>3° video "Live at" · annuncio della prima data e ciclo completo</td></tr>
+    <tr><td>Novembre</td><td class="num">13</td><td>Live del mese: 4 clip nuove + video integrale · foto dal concerto</td></tr>
+    <tr><td>Dicembre (fino al 20)</td><td class="num">9</td><td>4° video "Live at" · montaggio di fine anno · si chiude il 20</td></tr>
+    <tr class="tot"><td>Totale</td><td class="num">42</td><td>9 uscite YouTube cumulate</td></tr>
+  </table></div>
+
+  <h3>Orari e cadenza</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Giorni</div><div class="v">Martedì, giovedì, sabato</div></div>
+    <div class="row"><div class="k">Orario</div><div class="v">19:00–21:00</div></div>
+    <div class="row"><div class="k">Storie</div><div class="v">4 a settimana dal profilo band. Ricondivisione da tutti e 5 i componenti entro un'ora da ogni post</div></div>
+    <div class="row"><div class="k">YouTube</div><div class="v">1 uscita al mese della serie "Live at", più il video integrale a novembre</div></div>
+  </div>
+
+  <div class="card hi">
+    <strong>La serie "Live at"</strong>
+    <p style="margin:6px 0 0 0">I quattro video non sono un allegato per le mail: sono quattro uscite. Uno al mese da settembre a dicembre, ripubblicati con titolo "ZeusFebo — [titolo] (live at [locale], [anno])", miniatura e descrizione rifatte, e tre clip verticali a corredo. Copre il calendario editoriale di quattro mesi, e ogni uscita è un pretesto per riscrivere ai locali rimasti senza risposta.</p>
+    <div class="meter">SFORZO <b>▮▯▯▯▯</b> · RISULTATO <b>▮▮▮▮▮</b> — materiale già prodotto, riusato quattro volte.</div>
+  </div>
+
+  <h3>Format A — clip live verticale</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Formato</div><div class="v">Reel verticale 20–40 s, un'inquadratura sola, tagliata sul punto migliore</div></div>
+    <div class="row"><div class="k">Hook</div><div class="v">Parte dal ritornello, non dall'intro. Nessun testo parlato nel primo secondo</div></div>
+    <div class="row"><div class="k">Testo on-screen</div><div class="v">Alto: "ZEUSFEBO — [TITOLO]". Basso piccolo: "[LOCALE], [CITTÀ] · [ANNO]"</div></div>
+    <div class="row"><div class="k">Caption</div><div class="v">"Registrato al [LOCALE], audio dal vivo, niente ritocchi. Il set completo dura un'ora."</div></div>
+    <div class="row"><div class="k">CTA</div><div class="v">"Se programmi musica dal vivo scrivici a booking@zeusfebo.it"</div></div>
+    <div class="row"><div class="k">Hashtag · 8</div><div class="v">#indierockitaliano #musicaindipendente #liveband #rockitaliano #cantautorato #garbatella #concertiroma #[città]</div></div>
+    <div class="row"><div class="k">Frequenza</div><div class="v">1 a settimana · 14 in totale</div></div>
+  </div>
+
+  <h3>Format B — "Un verso"</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Formato</div><div class="v">15 s statici: foto in bianco e nero, verso scritto sopra, audio del pezzo sotto</div></div>
+    <div class="row"><div class="k">Hook</div><div class="v">Il verso stesso, grande, leggibile in mezzo secondo</div></div>
+    <div class="row"><div class="k">Caption</div><div class="v">Due righe sul perché è stato scritto, in prima persona, firmate da chi ha scritto il testo e non dalla band</div></div>
+    <div class="row"><div class="k">CTA</div><div class="v">"Il pezzo intero è su Spotify, link in bio"</div></div>
+    <div class="row"><div class="k">Frequenza</div><div class="v">1 a settimana · 14 in totale</div></div>
+  </div>
+
+  <h3>Post valvola</h3>
+  <p class="muto" style="font-size:13.5px">Annuncio di una data, ringraziamento a un locale, ripost, foto dalle prove. In assenza di materiale si salta senza recuperare.</p>
+
+  <div class="card warn">
+    <strong>Ciclo obbligatorio all'uscita di una data · 5 contenuti</strong>
+    <ul class="tick" style="margin-top:8px">
+      <li>Giorno 0: annuncio con poster, tag al locale, ricondivisione da tutti e 5</li>
+      <li>–7 giorni: clip di un pezzo previsto in scaletta</li>
+      <li>–1 giorno: storia della scaletta o del furgone che si carica</li>
+      <li>Sera stessa: 3 storie, mai in diretta durante i pezzi</li>
+      <li>+2 giorni: clip migliore dalle riprese e foto del pubblico, con ringraziamento al locale per nome. È la cosa che porta al richiamo</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TESTI -->
+<section id="testi">
+  <span class="eyebrow">Da copiare e incollare</span>
+  <h2>Testi<br>pronti</h2>
+
+  <h3>1 · Mail breve — locale piccolo</h3>
+  <p class="muto" style="font-size:13.5px">Sotto le 100 parole, un solo link in evidenza. Usata circa 115 volte nel periodo.</p>
+  <div class="copy"><pre id="t1">Oggetto: ZeusFebo — disponibilità live [MESE] a [CITTÀ]
+
+Ciao [NOME],
+
+siamo ZeusFebo, cinque elementi da Roma: alternative rock e indie con testi in italiano, set di 60 minuti tutto originale.
+
+Trenta secondi per capire se vi interessa — ripresa live, audio registrato dal vivo: [LINK VIDEO]
+
+Cerchiamo una data tra [MESE] e [MESE]. Ci autogestiamo il backline, siamo puntuali col soundcheck e portiamo mediamente tra le 20 e le 50 persone.
+
+Se può funzionare vi mando due date possibili e il rider.
+
+Grazie,
+[TUO NOME] — booking ZeusFebo
+booking@zeusfebo.it
+Sito: https://www.zeusfebo.it/
+Spotify: https://open.spotify.com/intl-it/artist/5oTkNP0TxFkiQBjz8PpSzR
+Instagram: https://www.instagram.com/zeusfebo/</pre></div>
+  <button class="btn" data-copy="t1">Copia</button>
+
+  <h3>2 · Mail lunga — rassegna, festival, comune</h3>
+  <p class="muto" style="font-size:13.5px">Deve poter essere girata a un assessore senza riscritture. Usata 30 volte tra S13 e S14.</p>
+  <div class="copy"><pre id="t2">Oggetto: Proposta live ZeusFebo per [NOME RASSEGNA] — alternative rock italiano, 5 elementi
+
+Buongiorno,
+
+vi scrivo per proporre ZeusFebo per l'edizione [ANNO] di [NOME RASSEGNA].
+
+CHI SIAMO
+ZeusFebo è una band romana di cinque elementi, nata alla Garbatella nel 2023. Alternative rock e indie con scrittura in italiano: strumenti suonati, nessuna base, canzoni originali costruite per il palco.
+
+COSA PORTIAMO
+· Set di 60 minuti di repertorio originale (adattabile a 40 o 90)
+· Quattro singoli pubblicati su tutte le piattaforme
+· Riprese live professionali con audio registrato dal vivo, disponibili come riferimento
+· Formazione: voce e chitarra acustica, chitarra elettrica, tastiere e synth, basso, batteria
+· Rider essenziale, backline autogestito, montaggio veloce
+
+PERCORSO LIVE
+Sette date a Roma tra il 2024 e il 2026, tra live club e spazi culturali: LOA Acrobax, CSOA La Strada, Casetta Rossa (due volte), Campo Magnetico, Pulp, Lian Club.
+
+ESIGENZE TECNICHE
+Rider completo con stage plot e input list in allegato. Esiste anche una versione ridotta a 13 canali e 4 monitor per palchi più piccoli: ditemi con cosa lavorate e vi mando quella giusta.
+Referente tecnico: Alessio Tabolacci — +39 338 934 9675
+
+MATERIALI
+Video live: [LINK]
+Ascolto: https://open.spotify.com/intl-it/artist/5oTkNP0TxFkiQBjz8PpSzR
+Sito: https://www.zeusfebo.it/
+
+DISPONIBILITÀ
+Tutto il Centro Italia. Per [PERIODO] abbiamo ancora disponibilità.
+
+Resto a disposizione per cachet, tempistiche e qualsiasi documento vi serva.
+
+Cordiali saluti,
+[TUO NOME] — booking ZeusFebo
+booking@zeusfebo.it</pre></div>
+  <button class="btn" data-copy="t2">Copia</button>
+
+  <h3>3 · Follow-up a 7 giorni</h3>
+  <p class="muto" style="font-size:13.5px">Si risponde alla propria stessa mail. Tre righe. Recupera circa il 40% delle risposte totali. Usata 105 volte.</p>
+  <div class="copy"><pre id="t3">Oggetto: Re: ZeusFebo — disponibilità live [MESE] a [CITTÀ]
+
+Ciao [NOME],
+torno un attimo su questa, so che è periodo di calendari pieni.
+
+Se serve: [LINK VIDEO] — siamo liberi [DATA 1] e [DATA 2].
+
+Se non è il momento nessun problema, mi rifaccio vivo a gennaio.
+[TUO NOME]</pre></div>
+  <button class="btn" data-copy="t3">Copia</button>
+
+  <h3>4 · Secondo invito con video nuovo</h3>
+  <p class="muto" style="font-size:13.5px">Solo in S11, ai 20 locali rimasti senza risposta. Il pretesto è il materiale nuovo, non l'insistenza.</p>
+  <div class="copy"><pre id="t4">Oggetto: ZeusFebo — video nuovo dal live al [LOCALE]
+
+Ciao [NOME],
+
+vi avevo scritto qualche settimana fa. Nel frattempo abbiamo suonato al [LOCALE] e ne è uscito un video nuovo, girato bene e con l'audio dal vivo: [LINK]
+
+Lo mando perché rende l'idea molto meglio di quello che vi avevo mandato prima.
+
+Se tra gennaio e marzo avete spazio, siamo disponibili. Altrimenti nessun problema.
+
+[TUO NOME] — booking ZeusFebo
+booking@zeusfebo.it</pre></div>
+  <button class="btn" data-copy="t4">Copia</button>
+
+  <h3>5 · Proposta di serata doppia a un'altra band</h3>
+  <p class="muto" style="font-size:13.5px">10 invii in S4. Probabilmente il messaggio più redditizio del set, e il meno penalizzato dai calendari già chiusi.</p>
+  <div class="copy"><pre id="t5">Ciao, siamo ZeusFebo, da Roma — alternative rock italiano, cinque elementi.
+
+Vi seguiamo e ci sembra che il pubblico sia simile al nostro. Vi va di fare una serata insieme?
+
+L'idea: troviamo noi il locale e la data, un'ora a testa, si divide la porta. Noi portiamo tra le 20 e le 50 persone; se ne portate altrettante il locale si ritrova una bella serata e dice sì molto più facilmente di quanto direbbe a ognuno di noi da solo.
+
+Qui come suoniamo: [LINK VIDEO]
+
+Se vi interessa vi propongo due o tre posti.</pre></div>
+  <button class="btn" data-copy="t5">Copia</button>
+
+  <h3>6 · Richiesta di apertura</h3>
+  <div class="copy"><pre id="t6">Ciao, siamo ZeusFebo, da Roma.
+
+Abbiamo visto la data del [DATA] al [LOCALE]. Se vi serve un'apertura ci siamo: 30 minuti, backline nostro, montiamo e smontiamo veloci, e portiamo il nostro pubblico.
+
+Qui il live: [LINK VIDEO]
+
+Se la cosa la gestisce il vostro booking, dateci pure il contatto e scriviamo lì. In bocca al lupo per la data in ogni caso.</pre></div>
+  <button class="btn" data-copy="t6">Copia</button>
+
+  <h3>7 · Firma mail</h3>
+  <div class="copy"><pre id="t7">[TUO NOME]
+Booking — ZeusFebo
+booking@zeusfebo.it
+
+Alternative / indie rock italiano · 5 elementi · Roma
+Set 60 minuti, repertorio originale · Disponibili in tutto il Centro Italia
+
+Sito https://www.zeusfebo.it/
+Spotify https://open.spotify.com/intl-it/artist/5oTkNP0TxFkiQBjz8PpSzR
+YouTube https://www.youtube.com/channel/UCy8oxgu52f0Sn3ukhfo6KQQ
+Instagram https://www.instagram.com/zeusfebo/
+Facebook https://www.facebook.com/zeusfebomassimi/</pre></div>
+  <button class="btn" data-copy="t7">Copia</button>
+
+  <h3>8 · Bio per i booker</h3>
+  <p class="muto" style="font-size:13.5px">Per one-sheet e mail. Nessun aggettivo, nessun numero social.</p>
+  <div class="copy"><pre id="t8">ZeusFebo sono cinque musicisti romani, nati alla Garbatella nel 2023.
+
+Alternative rock e indie con scrittura in italiano: strumenti suonati, nessuna base, un'ora di repertorio originale costruito per il palco. Quattro singoli pubblicati su tutte le piattaforme e riprese live professionali con audio registrato dal vivo.
+
+Zeus Febo Massimi — voce e chitarra acustica
+Andrea Tabolacci — chitarra elettrica
+Bruno Pantaleoni — tastiere, synth, chitarra elettrica, voce
+Silvano Lama — basso
+Alessio Tabolacci — batteria e voce
+
+Dal 2024 a oggi sette date a Roma tra live club e spazi culturali, con due ritorni nello stesso locale.
+
+Rider essenziale, backline autogestito, soundcheck 45 minuti. Disponibili in tutto il Centro Italia.</pre></div>
+  <button class="btn" data-copy="t8">Copia</button>
+
+  <h3>9 · Bio per social ed EPK</h3>
+  <div class="copy"><pre id="t9">Alla Garbatella ogni vicolo ha una storia e ogni bar un ritornello. Gli ZeusFebo nascono lì nel 2023, cinque amici che hanno deciso di trasformare le notti romane in canzoni.
+
+Strumenti veri, nessuna base: alternative rock e indie con la scrittura in italiano. Parlano di quello che succede mentre succede — gli amori che iniziano e quelli che finiscono, i sogni che resistono anche quando sembra tutto perduto.
+
+Dal vivo durano un'ora e non si fermano.</pre></div>
+  <button class="btn" data-copy="t9">Copia</button>
+</section>
+
+<!-- USCITE -->
+<section id="uscite">
+  <span class="eyebrow">Musica e rilasci</span>
+  <h2>C'è un disco<br>fermo in cassa</h2>
+  <p>4 singoli pubblicati per 13 minuti complessivi, contro 60 minuti di set: circa il 78% di quello che si suona dal vivo non esiste su streaming. In più ci sono decine di inediti mai registrati per un'uscita e i master multitraccia dei live già mixati.</p>
+
+  <div class="card warn">
+    <strong>Perché non esce niente da qui a dicembre</strong>
+    <p style="margin:6px 0 0 0">Con 8 ascoltatori mensili un'uscita in autunno non fa numeri, e dicembre è il mese peggiore dell'anno per pubblicare: playlist congelate e attenzione altrove. Un pezzo bruciato adesso non sarà disponibile quando servirà davvero.</p>
+  </div>
+
+  <div class="card hi">
+    <strong>Marzo 2027 — il live EP</strong>
+    <p style="margin:6px 0 0 0">4 o 5 pezzi dai live già registrati e mixati. Costo: 25 € di distribuzione. Non farà numeri nemmeno questo, ma fa due cose che contano di più adesso: rimette qualcosa di vivo sul profilo Spotify dopo mesi fermi, e soprattutto è un <strong>pretesto legittimo</strong> per riscrivere a ogni locale rimasto senza risposta, mentre i calendari primaverili ed estivi si riempiono.</p>
+    <p style="margin:8px 0 0 0" class="muto">Pitch su Spotify for Artists almeno 3 settimane prima dell'uscita. Scelta dei brani in S13.</p>
+    <div class="meter">SFORZO <b>▮▯▯▯▯</b> · RISULTATO <b>▮▮▮▮▯</b> — i master esistono, il costo è una distribuzione.</div>
+  </div>
+
+  <div class="card">
+    <strong>Da aprile 2027 — gli inediti</strong>
+    <p style="margin:6px 0 0 0">Con quel catalogo la logica non è "si pubblica quando si è pronti": 1 singolo ogni 8-10 settimane, ognuno agganciato a una data live. Circa 5 uscite l'anno. Da definire a dicembre, in base alle date già in calendario per la primavera.</p>
+  </div>
+
+  <div class="card">
+    <strong>Regola da adottare subito</strong>
+    <p style="margin:6px 0 0 0">Registrazione multitraccia di <strong>ogni</strong> concerto, anche la serata da 20 persone. In 12 mesi si forma un catalogo live senza mai entrare in studio. Cambia anche il calcolo su una data mal pagata: se produce un pezzo pubblicabile, il bilancio della serata è diverso.</p>
+  </div>
+</section>
+
+<!-- BANDI -->
+<section id="bandi">
+  <span class="eyebrow">Contest e bandi</span>
+  <h2>Il circuito<br>under 35<br>è chiuso</h2>
+  <p>Con una media di 40 anni Rock Contest e MArteLive sono esclusi: il primo si rivolge ad artisti che non hanno superato i 35 anni, la seconda è una call per artisti tra i 18 e i 35. La stessa soglia torna in quasi tutti i concorsi per emergenti, perché finanziati con fondi per le politiche giovanili.</p>
+
+  <div class="card hi">
+    <strong>La rilettura</strong>
+    <p style="margin:6px 0 0 0">Rassegne, sagre, festival e live club <strong>non hanno limiti di età</strong>, e chi li programma non cerca una giovane rivelazione: cerca cinque persone puntuali che montino in venti minuti e suonino bene. Su quel terreno una band di quarantenni con rider ordinato, quattro singoli e riprese professionali parte avvantaggiata. Conseguenza sui testi: <strong>fuori la parola "emergenti"</strong>, mai "giovane band". Il posizionamento è affidabilità, non promessa.</p>
+  </div>
+
+  <div class="scroll"><table>
+    <tr><th>Bando</th><th>Quando</th><th>Condizioni</th></tr>
+    <tr><td>1MNext — Primo Maggio, Roma</td><td>Iscrizioni da dicembre, scadenza metà febbraio</td><td>Gratuito, nessun limite d'età, tutti i generi, solo inediti. Voto pubblico 25%, giuria 75%</td></tr>
+    <tr><td>Contest Band Emergenti WMF, Bologna</td><td>Marzo-aprile 2027</td><td>Gratuito, si partecipa con un video, fase di voto del pubblico</td></tr>
+    <tr><td>Tour Music Fest</td><td>Da verificare</td><td>Band da 3 elementi in su, nessun limite d'età. Modello commerciale: controllare quote e costi delle fasi live prima di iscriversi</td></tr>
+    <tr><td>Rock Contest, MArteLive</td><td>—</td><td>Esclusi per limite anagrafico</td></tr>
+  </table></div>
+</section>
+
+<!-- RIDER -->
+<section id="rider">
+  <span class="eyebrow">Il problema tecnico</span>
+  <h2>Il rider<br>chiude porte</h2>
+  <p>Il Technical Rider 2026 è ordinato e dettagliato, ma chiede <strong>19 canali, 7 AUX monitor indipendenti, 5 wedge, 6 DI attive e 13 prese</strong>. È un rider da rassegna o da club medio. I posti da cui si parte davvero hanno spesso un banco da 12-16 canali e 2-3 mandate. Chi lo riceve non scrive "adattiamo": smette di rispondere.</p>
+
+  <div class="card hi">
+    <strong>Rider B — 13 canali, 4 mix</strong>
+    <p style="margin:6px 0 0 0" class="muto">Da redigere con Alessio in S5. Un foglio solo.</p>
+  </div>
+
+  <div class="scroll"><table>
+    <tr><th>Sezione</th><th>Canali</th><th>Cosa cambia rispetto al rider grande</th></tr>
+    <tr><td>Batteria</td><td class="num">4</td><td>Kick, rullante, overhead L/R. Si tagliano hi-hat, tom e floor: in sala piccola i tom arrivano dagli overhead</td></tr>
+    <tr><td>SPD-SX</td><td class="num">1</td><td>Somma mono su una DI invece di L/R</td></tr>
+    <tr><td>Basso</td><td class="num">1</td><td>Solo DI. Il microfono sull'amplificatore è la prima cosa che salta</td></tr>
+    <tr><td>Chitarre elettriche</td><td class="num">2</td><td>Invariato, un microfono per amplificatore</td></tr>
+    <tr><td>Acustica e tastiere</td><td class="num">3</td><td>DI per l'acustica, somma dal mixer di Bruno</td></tr>
+    <tr><td>Voci</td><td class="num">3</td><td>Invariate. Le voci non si toccano mai</td></tr>
+    <tr class="tot"><td>Totale ingressi</td><td class="num">13</td><td>Contro 19</td></tr>
+  </table></div>
+
+  <div class="scroll"><table>
+    <tr><th>Altre voci</th><th>Rider grande</th><th>Rider B</th></tr>
+    <tr><td>Mandate monitor</td><td class="num">7 indipendenti</td><td class="num">4</td></tr>
+    <tr><td>Wedge dalla venue</td><td class="num">5</td><td class="num">2 condivisi</td></tr>
+    <tr><td>DI attive</td><td class="num">6</td><td class="num">3</td></tr>
+    <tr><td>Prese 230 V</td><td class="num">13</td><td class="num">4 + 3 ciabatte proprie</td></tr>
+  </table></div>
+
+  <p class="muto" style="font-size:13.5px">Monitor: IEM per Zeus e Alessio, poi 2 wedge condivisi, uno fronte e uno retro palco. Il rider grande dichiara che nessuno condivide il mix: nella versione B vale il contrario, altrimenti restano fuori metà dei locali.</p>
+
+  <div class="card warn">
+    <p style="margin:0"><strong>Regola per le mail:</strong> il rider non si allega mai al primo contatto. Nella prima mail si scrive solo "rider essenziale, backline autogestito". Il documento tecnico parte a data quasi chiusa, nella versione giusta per quel palco.</p>
+  </div>
+
+  <div class="card">
+    <strong>Da aggiungere al rider grande</strong>
+    <p style="margin:6px 0 0 0">Durata di soundcheck e cambio palco — "soundcheck 45 minuti, cambio palco 20" — e una decisione definitiva sulla DI del basso, oggi lasciata condizionale: un fonico che legge "se sbilanciato" prepara comunque tutto.</p>
+  </div>
+</section>
+
+<!-- EPK -->
+<section id="epk">
+  <span class="eyebrow">Manutenzione</span>
+  <h2>Cosa manca<br>all'EPK</h2>
+  <ul class="tick">
+    <li><strong>Mostra 4 date su 7.</strong> Mancano Pulp, Campo Magnetico e soprattutto LOA Acrobax, la più recente delle date importanti. E non si vede il doppio passaggio a Casetta Rossa: un locale che richiama è il segnale più forte leggibile da un programmatore</li>
+    <li><strong>La formazione è sbagliata in tre posti.</strong> Bio del sito, canale YouTube e schede stampa dichiarano 4 componenti senza Bruno. Il rider ne prevede 5</li>
+    <li><strong>Manca un one-sheet da 1 pagina.</strong> 6 pagine sono troppe per una mail: molti aprono un allegato solo, da telefono</li>
+    <li><strong>Manca un numero di telefono.</strong> Un locale con un buco da riempire in 3 giorni chiama, non scrive</li>
+    <li><strong>I video vanno linkati davvero.</strong> "Clicca su un'immagine per aprire il video" funziona solo con link attivi anche da telefono</li>
+    <li><strong>Va aggiunta una riga sul pubblico:</strong> "portiamo mediamente tra le 20 e le 50 persone"</li>
+    <li><strong>Niente numeri social.</strong> Con 65 follower e 8 ascoltatori mensili ogni cifra lavora contro</li>
+  </ul>
+</section>
+
+<!-- BUDGET -->
+<section id="budget">
+  <span class="eyebrow">200 € in quattro mesi</span>
+  <h2>Dove vanno<br>i soldi</h2>
+  <div class="scroll"><table>
+    <tr><th>Voce</th><th>Importo</th><th>Nota</th></tr>
+    <tr><td>Trasferte</td><td class="num">120 €</td><td>Benzina e pedaggi per 2-3 date fuori Roma. Senza questa il raggio Centro Italia resta teorico</td></tr>
+    <tr><td>Iscrizioni</td><td class="num">40 €</td><td>Riserva per contest a pagamento. 1MNext è gratuito</td></tr>
+    <tr><td>Distribuzione</td><td class="num">25 €</td><td>Per il live EP di marzo 2027, pagata a fine anno</td></tr>
+    <tr><td>Ciabatte</td><td class="num">15 €</td><td>3 multiprese, per non chiedere 13 prese ai locali piccoli</td></tr>
+    <tr><td>ADV</td><td class="num">0 €</td><td>Azzerata. Con 65 follower un boost non sposta nulla di misurabile. Si riapre solo sopra le 5.000 visualizzazioni organiche su un contenuto</td></tr>
+    <tr><td>Video e audio</td><td class="num">0 €</td><td>Riprese e registrazione multitraccia interne. È il vantaggio competitivo del progetto</td></tr>
+    <tr class="tot"><td>Totale</td><td class="num">200 €</td><td>Su 4 mesi</td></tr>
+  </table></div>
+</section>
+
+<!-- REGOLE -->
+<section id="regole">
+  <span class="eyebrow">Sulle date</span>
+  <h2>Quattro regole<br>che proteggono<br>il mercato</h2>
+  <ul class="tick no">
+    <li><strong>Nessuno conferma una data per conto proprio.</strong> Nemmeno via DM, nemmeno con un amico che gestisce un locale. Prima si passa da Alessio: due persone che trattano in parallelo con lo stesso posto lo bruciano</li>
+    <li><strong>Massimo 2 date gratis a Roma in 4 mesi.</strong> Oltre, il nome smette di avere un prezzo, e i gestori tra loro se lo dicono</li>
+    <li><strong>Almeno 6 settimane tra due date romane.</strong> Il pubblico è lo stesso: alla terza volta in due mesi non viene più nessuno e il locale se ne accorge</li>
+    <li><strong>Mai partire fuori Roma senza almeno la benzina coperta.</strong> In cinque, un viaggio a vuoto demoralizza più di un no</li>
+  </ul>
+</section>
+
+<!-- RISCHI -->
+<section id="rischi">
+  <span class="eyebrow">Cosa manda a monte il piano</span>
+  <h2>I cinque<br>modi di fallire</h2>
+  <ul class="tick no">
+    <li><strong>Slittare ancora.</strong> L'avvio è già spostato al 7 settembre e ha ceduto le due settimane migliori per i calendari autunnali. Un secondo rinvio non sposta il piano: lo trasforma in un piano per la sola estate 2027</li>
+    <li><strong>Caricare altro su Alessio.</strong> Batterista, produttore, referente tecnico e unico canale verso la band: al quinto compito si ferma, e con lui si ferma il piano</li>
+    <li><strong>Suonare gratis ovunque a Roma.</strong> Oltre le 2 date vetrina, il nome smette di avere un prezzo</li>
+    <li><strong>Concentrare le date nello stesso quartiere.</strong> Il pubblico è lo stesso: alla terza in due mesi non viene più nessuno</li>
+    <li><strong>Perdere la costanza sugli invii.</strong> Senza un giorno fisso in calendario, a dicembre il conteggio è 60 messaggi invece di 270, senza che nessuno se ne sia accorto</li>
+  </ul>
+</section>
+
+<footer>
+  <span>ZeusFebo · Piano completo Set→Dic 2026</span>
+  <span>booking@zeusfebo.it</span>
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('.btn[data-copy]').forEach(function(b){
+  b.addEventListener('click', function(){
+    var el = document.getElementById(b.getAttribute('data-copy'));
+    if(!el) return;
+    var txt = el.innerText;
+    var done = function(){ var old = b.textContent; b.textContent = 'Copiato'; setTimeout(function(){ b.textContent = old; }, 1600); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(done).catch(function(){ sel(el); });
+    } else { sel(el); }
+  });
+});
+function sel(el){ var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+</script>
 </body>
 </html>
